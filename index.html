@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Printing Service — Custom Prints, Delivered.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+
+      <a href="#home" class="nav__logo" data-scroll="home">
+        <img src="/images/logo_white_background.jpg " alt="3D Printing Service Logo" class="nav__logo-img" />
+        <span class="nav__logo-text">3D Printing Services</span>
+      </a>
+
+      <nav class="nav__menu" id="navMenu">
+        <a href="#home" class="nm-link" data-scroll="home">Home</a>
+        <a href="#services" class="nm-link" data-scroll="services">Services</a>
+        <a href="#materials" class="nm-link" data-scroll="materials">Materials</a>
+        <a href="#how" class="nm-link" data-scroll="how">How It Works</a>
+        <!-- Contact link → scrolls to FOOTER contact block -->
+        <a href="#footer-contact" class="nm-link" data-scroll="footer-contact">Contact</a>
+        <!-- CTA button → scrolls to PROJECT SPECS INTAKE FORM -->
+        <a href="#intake" class="btn btn-y nav__cta" data-scroll="intake">Get A Quote</a>
+      </nav>
+
+      <button class="nav__burger" id="navBurger" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero__body">
+
+
+
+        <h1 class="hero__h1">
+          You Order<br />
+
+          <span class="hy">We Print</span>
+        </h1>
+
+        <p class="hero__caption">
+          Your file → our machine → your door.<br />
+          Zero corporate queue. Every print gets our full attention.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#intake" class="btn btn-y" data-scroll="intake">Start A Print Order</a>
+          <a href="#services" class="btn btn-o" data-scroll="services">See What We Print</a>
+        </div>
+
+        <div class="hero__pills">
+          <span class="pill">±0.1mm Precision</span>
+          <span class="pill">24H Quote</span>
+          <span class="pill">600mm/s CoreXY</span>
+          <span class="pill">Tracked Delivery</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       2. HARDWARE TICKER
+  ═══════════════════════════════════ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <div class="ticker__row">
+        <span>⚡ Hardware: Flashforge AD5X Ecosystem</span>
+        <span class="ts">|</span>
+        <span>🏎 CoreXY High-Speed — 600mm/s</span>
+        <span class="ts">|</span>
+        <span>🔧 Custom Engineering Infill Patterns</span>
+        <span class="ts">|</span>
+        <span>📦 Tracked Doorstep Delivery</span>
+        <span class="ts">|</span>
+        <span>🧪 PLA+ · PETG · ABS · Nylon · CF-Nylon</span>
+        <span class="ts">|</span>
+        <span>📐 ±0.1mm Dimensional Accuracy</span>
+        <span class="ts">|</span>
+        <span>⚡ Hardware: Flashforge AD5X Ecosystem</span>
+        <span class="ts">|</span>
+        <span>🏎 CoreXY High-Speed — 600mm/s</span>
+        <span class="ts">|</span>
+        <span>🔧 Custom Engineering Infill Patterns</span>
+        <span class="ts">|</span>
+        <span>📦 Tracked Doorstep Delivery</span>
+        <span class="ts">|</span>
+        <span>🧪 PLA+ · PETG · ABS · Nylon · CF-Nylon</span>
+        <span class="ts">|</span>
+        <span>📐 ±0.1mm Dimensional Accuracy</span>
+        <span class="ts">|</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       3. SERVICES MATRIX
+  ═══════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="wrap">
+
+      <div class="sec-hdr">
+        <span class="micro-tag">What We Print</span>
+        <h2 class="sec-title">
+          4 Print Streams.<br />
+          <span class="hy">Click To Explore.</span>
+        </h2>
+        <p class="sec-sub">Click any card to unlock full technical details and portfolio examples.</p>
+      </div>
+
+      <div class="services__grid">
+
+        <div class="sc sr" data-stream="1" tabindex="0" role="button"
+          aria-label="Gaming And Cosplay Assets — Click To Explore">
+          <div class="sc__num">01</div>
+          <div class="sc__ico">🕹️</div>
+          <h3 class="sc__title">Gaming &amp; Cosplay Assets</h3>
+          <ul class="sc__list">
+            <li>Props &amp; Armor Pieces</li>
+            <li>Miniatures &amp; Character Busts</li>
+            <li>Display Stands &amp; Dioramas</li>
+          </ul>
+          <div class="sc__chips">
+            <span class="chip">PLA+</span>
+            <span class="chip">PETG</span>
+          </div>
+          <span class="sc__cta">Order This Stream →</span>
+        </div>
+
+        <div class="sc sr sr-d1" data-stream="2" tabindex="0" role="button"
+          aria-label="Replacement Parts And Functional Pieces — Click To Explore">
+          <div class="sc__num">02</div>
+          <div class="sc__ico">⚙️</div>
+          <h3 class="sc__title">Replacement Parts &amp; Functional Pieces</h3>
+          <ul class="sc__list">
+            <li>Brackets &amp; Enclosures</li>
+            <li>Custom Gears &amp; Fittings</li>
+            <li>Snap-Fit Tolerances</li>
+          </ul>
+          <div class="sc__chips">
+            <span class="chip">ABS</span>
+            <span class="chip">Nylon</span>
+          </div>
+          <span class="sc__cta">Order This Stream →</span>
+        </div>
+
+        <div class="sc sr sr-d2" data-stream="3" tabindex="0" role="button"
+          aria-label="Functional Prototyping — Click To Explore">
+          <div class="sc__num">03</div>
+          <div class="sc__ico">🏗️</div>
+          <h3 class="sc__title">Functional Prototyping</h3>
+          <ul class="sc__list">
+            <li>Concept Models &amp; Mockups</li>
+            <li>Multi-Part Assemblies</li>
+            <li>Student &amp; Startup Builds</li>
+          </ul>
+          <div class="sc__chips">
+            <span class="chip">PETG</span>
+            <span class="chip">CF-Nylon</span>
+          </div>
+          <span class="sc__cta">Order This Stream →</span>
+        </div>
+
+        <div class="sc sr sr-d3" data-stream="4" tabindex="0" role="button"
+          aria-label="Print Configuration Optimization — Click To Explore">
+          <div class="sc__num">04</div>
+          <div class="sc__ico">🔧</div>
+          <h3 class="sc__title">Print Configuration Optimization</h3>
+          <ul class="sc__list">
+            <li>File Readiness Checks</li>
+            <li>Infill &amp; Layer Consulting</li>
+            <li>Material Selection Guidance</li>
+          </ul>
+          <div class="sc__chips">
+            <span class="chip">All Materials</span>
+          </div>
+          <span class="sc__cta">Order This Stream →</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       4. MATERIALS
+  ═══════════════════════════════════ -->
+  <section class="materials" id="materials">
+    <div class="wrap">
+
+      <div class="sec-hdr">
+        <span class="micro-tag">Material Readiness</span>
+        <h2 class="sec-title">High-Performance Filaments</h2>
+        <p class="sec-sub">Every material runs on the Flashforge AD5X CoreXY platform at ±0.1mm tolerance.</p>
+      </div>
+
+      <div class="mat__grid">
+
+        <div class="mat-card sr">
+          <div class="mat-card__top">
+            <span class="mat-ico">🟡</span>
+            <span class="mat-badge mat-badge--green">Ready To Print</span>
+          </div>
+          <h3 class="mat-name">PLA+</h3>
+          <p class="mat-desc">Premium entry-level. Crisp detail, easy post-processing. Ideal for display props, cosplay
+            pieces, and concept models.</p>
+          <ul class="mat-specs">
+            <li>Print Temp: 200–220°C</li>
+            <li>Great Surface Finish</li>
+            <li>Easy To Paint &amp; Sand</li>
+          </ul>
+        </div>
+
+        <div class="mat-card sr sr-d1">
+          <div class="mat-card__top">
+            <span class="mat-ico">🔵</span>
+            <span class="mat-badge mat-badge--green">Ready To Print</span>
+          </div>
+          <h3 class="mat-name">PETG</h3>
+          <p class="mat-desc">Flexible, chemical-resistant, and food-safe. Best for enclosures, wearable fixtures, and
+            mechanical brackets.</p>
+          <ul class="mat-specs">
+            <li>Print Temp: 230–250°C</li>
+            <li>Impact-Resistant</li>
+            <li>Moisture-Resistant</li>
+          </ul>
+        </div>
+
+        <div class="mat-card sr sr-d2">
+          <div class="mat-card__top">
+            <span class="mat-ico">🔴</span>
+            <span class="mat-badge mat-badge--green">Ready To Print</span>
+          </div>
+          <h3 class="mat-name">ABS</h3>
+          <p class="mat-desc">Heat-resistant engineering grade. Optimal for mechanical assemblies, automotive parts, and
+            high-stress applications.</p>
+          <ul class="mat-specs">
+            <li>Print Temp: 230–250°C</li>
+            <li>High-Temp Tolerance</li>
+            <li>Acetone-Smoothable</li>
+          </ul>
+        </div>
+
+        <div class="mat-card sr sr-d3">
+          <div class="mat-card__top">
+            <span class="mat-ico">⚫</span>
+            <span class="mat-badge mat-badge--y">Premium Material</span>
+          </div>
+          <h3 class="mat-name">CF-Nylon</h3>
+          <p class="mat-desc">Carbon-Fiber Nylon composite. Extreme stiffness-to-weight ratio for drone frames,
+            structural jigs, and industrial parts.</p>
+          <ul class="mat-specs">
+            <li>Print Temp: 260–280°C</li>
+            <li>Superior Stiffness</li>
+            <li>Aerospace-Grade Strength</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       5. HOW IT WORKS
+       Number badge → Emoji → One-liner
+  ═══════════════════════════════════ -->
+  <section class="how" id="how">
+    <div class="wrap">
+
+      <div class="sec-hdr">
+        <span class="micro-tag">Simple Process</span>
+        <h2 class="sec-title">How To Order</h2>
+      </div>
+
+      <div class="how__grid">
+
+        <div class="how-card sr">
+          <div class="how-card__num">1</div>
+          <div class="how-card__ico">📁</div>
+          <div class="how-card__label">Upload Your 3D File</div>
+        </div>
+
+        <div class="how-card__arrow" aria-hidden="true">→</div>
+
+        <div class="how-card sr sr-d1">
+          <div class="how-card__num">2</div>
+          <div class="how-card__ico">⚙️</div>
+          <div class="how-card__label">Choose Material &amp; Specs</div>
+        </div>
+
+        <div class="how-card__arrow" aria-hidden="true">→</div>
+
+        <div class="how-card sr sr-d2">
+          <div class="how-card__num">3</div>
+          <div class="how-card__ico">📦</div>
+          <div class="how-card__label">Doorstep Shipping &amp; Tracking</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       6. PROJECT SPECS INTAKE FORM
+  ═══════════════════════════════════ -->
+  <section class="intake" id="intake">
+    <div class="wrap">
+      <div class="intake__wrap">
+
+        <!-- Left panel -->
+        <div class="intake__left">
+          <span class="micro-tag">Project Specs Intake</span>
+          <h2 class="intake__title">
+            Send Your<br /><span class="hy">Brief.</span>
+          </h2>
+          <p class="intake__sub">
+            Your file → fixed quote within 24 hours → we print → tracked delivery.
+          </p>
+          <ul class="intake__ticks">
+            <li><span class="tick">✓</span> No 3D Modeling Skills Needed</li>
+            <li><span class="tick">✓</span> Fixed Price Before Print Starts</li>
+            <li><span class="tick">✓</span> NDA Available On Request</li>
+            <li><span class="tick">✓</span> Fully Tracked To Your Door</li>
+          </ul>
+          <a href="mailto:info@baldo.qa" class="intake__email">
+            info@baldo.qa
+          </a>
+        </div>
+
+        <!-- Form panel -->
+        <div class="intake__form-wrap">
+          <form class="iform" id="iform" novalidate>
+
+            <div class="if-row">
+              <div class="if-field">
+                <label for="if-name">Your Name *</label>
+                <input type="text" id="if-name" name="name" placeholder="Your Name" required />
+              </div>
+              <div class="if-field">
+                <label for="if-email">Email Address *</label>
+                <input type="email" id="if-email" name="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+
+            <div class="if-field">
+              <label for="if-stream">Print Stream *</label>
+              <select id="if-stream" name="stream" required>
+                <option value="" disabled selected>Select A Print Stream…</option>
+                <option>🕹️ Gaming &amp; Cosplay Assets</option>
+                <option>⚙️ Replacement Parts &amp; Functional Pieces</option>
+                <option>🏗️ Functional Prototyping</option>
+                <option>🔧 Print Configuration Optimization</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="if-field">
+              <label>Preferred Material</label>
+              <div class="if-chips" id="ifChips">
+                <button type="button" class="if-chip if-chip--on" data-val="PLA+">PLA+</button>
+                <button type="button" class="if-chip" data-val="PETG">PETG</button>
+                <button type="button" class="if-chip" data-val="ABS">ABS</button>
+                <button type="button" class="if-chip" data-val="Nylon">Nylon</button>
+                <button type="button" class="if-chip" data-val="CF-Nylon">CF-Nylon</button>
+                <button type="button" class="if-chip" data-val="Not Sure">Not Sure</button>
+              </div>
+              <input type="hidden" id="if-mat" name="material" value="PLA+" />
+            </div>
+
+            <div class="if-row if-row--2">
+              <div class="if-field">
+                <label for="if-qty">Quantity *</label>
+                <input type="number" id="if-qty" name="qty" placeholder="1" min="1" required />
+              </div>
+              <div class="if-field">
+                <label for="if-date">Deadline (Optional)</label>
+                <input type="date" id="if-date" name="deadline" />
+              </div>
+            </div>
+
+            <div class="if-field">
+              <label for="if-colour">Preferred Colour / Finish</label>
+              <input type="text" id="if-colour" name="colour"
+                placeholder="e.g. Matte Black, Galaxy Silver, Natural White" />
+            </div>
+
+            <div class="if-field">
+              <label for="if-brief">Project Brief *</label>
+              <textarea id="if-brief" name="brief" rows="4" required
+                placeholder="Describe your print — dimensions, use-case, reference images, special tolerances…"></textarea>
+            </div>
+
+            <div class="if-field">
+              <label>Attach Files (Optional)</label>
+              <div class="if-drop" id="ifDrop">
+                <span class="ifd-ico">📂</span>
+                <p><strong>Drag &amp; Drop</strong> or <span class="ifd-browse" id="ifdBrowse">Browse Files</span></p>
+                <p class="ifd-hint">STL · STEP · OBJ · JPG · PNG — 50MB Max</p>
+                <input type="file" id="ifFile" name="files" multiple accept=".stl,.step,.obj,.jpg,.jpeg,.png" hidden />
+              </div>
+              <div class="if-filelist" id="ifFilelist"></div>
+            </div>
+
+            <button type="submit" class="btn btn-y btn-block" id="ifSubmit">
+              Submit Print Order <span class="btn-arr">→</span>
+            </button>
+
+            <div class="if-confirm" id="ifConfirm">
+              <span class="ifc-ico">✓</span>
+              <div>
+                <strong>Order Specifications Received.</strong>
+                <p>Our team will review your project and reply within 24 hours.</p>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       7. FOOTER / CONTACT BLOCK
+  ═══════════════════════════════════ -->
+  <footer class="footer" id="footer-contact">
+    <div class="wrap">
+
+      <!-- Quick Contact Block -->
+      <div class="footer__contact-block">
+        <div class="footer__contact-left">
+          <span class="micro-tag">Quick Contact</span>
+          <h2 class="footer__contact-title">Get In Touch.</h2>
+          <p class="footer__contact-sub">
+            Have a quick question? Drop a message below and we'll respond within 24 hours.
+          </p>
+        </div>
+        <form class="qform" id="qform" novalidate>
+          <div class="qf-row">
+            <input type="text" name="qname" placeholder="Your Name" required />
+            <input type="email" name="qemail" placeholder="Email Address" required />
+          </div>
+          <textarea name="qmessage" rows="3" placeholder="Your message…" required></textarea>
+          <button type="submit" class="btn btn-y">Send Message →</button>
+          <div class="qf-confirm" id="qfConfirm">
+            <span>✓</span> Message Received — We'll Reply Within 24 Hours.
+          </div>
+        </form>
+      </div>
+
+      <!-- Footer grid -->
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="/images/white_logo_color_background.jpg" alt="3D Printing Service" class="footer__logo-img" />
+            <span class="footer__logo-text">3D Printing Services</span>
+          </div>
+          <p class="footer__tagline">
+            3D Print Studio · Doha, QA<br />
+            Custom Prints. Tracked Delivery. Zero Fluff.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h5>Navigate</h5>
+          <a data-scroll="home">Home</a>
+          <a data-scroll="services">Services</a>
+          <a data-scroll="materials">Materials</a>
+          <a data-scroll="how">How It Works</a>
+          <a data-scroll="intake">Get A Quote</a>
+        </div>
+
+        <div class="footer__col">
+          <h5>Print Streams</h5>
+          <a data-scroll="services">Gaming &amp; Cosplay</a>
+          <a data-scroll="services">Replacement Parts</a>
+          <a data-scroll="services">Functional Prototyping</a>
+          <a data-scroll="services">Print Optimization</a>
+        </div>
+
+        <div class="footer__col">
+          <h5>Contact</h5>
+          <a href="mailto:info@baldo.qa">info@baldo.qa</a>
+          <a href="#">Doha, Qatar</a>
+          <a href="#">Instagram</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+
+      </div>
+
+      <div class="footer__btm">
+        <span>© 2026 3D Printing Service. All Rights Reserved.</span>
+        <span class="footer__hw">Flashforge AD5X · CoreXY · 600mm/s · ±0.1mm</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════
+       MODAL
+  ═══════════════════════════════════ -->
+  <div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-label="Stream Portfolio">
+    <div class="modal" id="modal">
+
+      <!-- Top bar -->
+      <div class="modal__bar">
+        <div class="modal__bar-left">
+          <span class="modal__num" id="mNum">01</span>
+          <div>
+            <h2 class="modal__title" id="mTitle">Gaming &amp; Cosplay Assets</h2>
+            <p class="modal__sub" id="mSub">Portfolio · Full Details</p>
+          </div>
+        </div>
+        <button class="modal__close" id="modalClose" aria-label="Close modal">✕ Close</button>
+      </div>
+
+      <!-- Scrollable body: Gallery FIRST, Description SECOND -->
+      <div class="modal__body" id="modalBody">
+
+        <div class="modal__section-hdr">
+          <span class="micro-tag">Portfolio Examples</span>
+        </div>
+        <div class="modal__gal" id="mGal"></div>
+
+        <div class="modal__section-hdr modal__section-hdr--desc">
+          <span class="micro-tag">What We Print For You</span>
+        </div>
+        <div class="modal__desc" id="mDesc"></div>
+
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="modal__foot">
+        <a href="#intake" class="btn btn-y modal__order" id="mOrder" data-scroll="intake">
+          Order This Stream →
+        </a>
+        <span class="modal__foot-note">Fixed-Rate Quote · 24-Hour Response</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
