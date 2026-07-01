@@ -181,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ─────────────────────────────────────────────
      4. FILE UPLOAD — drag, drop, browse
+     accept="*" — all file types allowed
   ───────────────────────────────────────────── */
   const dropEl = document.getElementById('ifDrop');
   const fileInp = document.getElementById('ifFile');
@@ -189,6 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   if (dropEl && fileInp) {
+    // Remove any type restriction so all files are accepted
+    fileInp.removeAttribute('accept');
+
     dropEl.addEventListener('click', () => fileInp.click());
     browse?.addEventListener('click', e => { e.stopPropagation(); fileInp.click(); });
     fileInp.addEventListener('change', () => renderFiles(fileInp.files));
@@ -205,7 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!fileList || !files?.length) return;
     fileList.innerHTML = '';
     Array.from(files).forEach(f => {
-      const ext = f.name.split('.').pop().toUpperCase();
+      const ext = f.name.includes('.')
+        ? f.name.split('.').pop().toUpperCase()
+        : 'FILE';
       const size = f.size >= 1_048_576
         ? `${(f.size / 1_048_576).toFixed(1)} MB`
         : `${(f.size / 1024).toFixed(0)} KB`;
@@ -222,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ─────────────────────────────────────────────
      5. INTAKE FORM — validate + POST to /contact
+     Files converted to base64 before sending
   ───────────────────────────────────────────── */
   const iform = document.getElementById('iform');
   const iconfirm = document.getElementById('ifConfirm');
@@ -259,16 +266,33 @@ document.addEventListener('DOMContentLoaded', () => {
     isubmit.innerHTML = 'Sending… ⏳';
 
 
+    // Convert any attached files to base64
+    const rawFiles = fileInp?.files ? Array.from(fileInp.files) : [];
+    let attachments = [];
+    if (rawFiles.length > 0) {
+      try {
+        attachments = await Promise.all(rawFiles.map(f => fileToBase64(f)));
+      } catch {
+        showFormError(iform, 'File encoding failed. Try again or remove the attached files.');
+        isubmit.disabled = false;
+        isubmit.style.opacity = '';
+        isubmit.innerHTML = 'Submit Print Order <span class="btn-arr">→</span>';
+        return;
+      }
+    }
+
+
     const payload = {
-      formType: 'intake',
-      name:     document.getElementById('if-name').value.trim(),
-      email:    document.getElementById('if-email').value.trim(),
-      message:  document.getElementById('if-brief').value.trim(),
-      stream:   document.getElementById('if-stream').value,
-      material: document.getElementById('if-mat').value,
-      qty:      document.getElementById('if-qty').value,
-      colour:   document.getElementById('if-colour').value.trim(),
-      deadline: document.getElementById('if-date').value,
+      formType:    'intake',
+      name:        document.getElementById('if-name').value.trim(),
+      email:       document.getElementById('if-email').value.trim(),
+      message:     document.getElementById('if-brief').value.trim(),
+      stream:      document.getElementById('if-stream').value,
+      material:    document.getElementById('if-mat').value,
+      qty:         document.getElementById('if-qty').value,
+      colour:      document.getElementById('if-colour').value.trim(),
+      deadline:    document.getElementById('if-date').value,
+      attachments, // base64 encoded file array
     };
 
 
@@ -346,9 +370,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const payload = {
       formType: 'quick',
-      name:    qform.querySelector('[name="qname"]').value.trim(),
-      email:   qform.querySelector('[name="qemail"]').value.trim(),
-      message: qform.querySelector('[name="qmessage"]').value.trim(),
+      name:     qform.querySelector('[name="qname"]').value.trim(),
+      email:    qform.querySelector('[name="qemail"]').value.trim(),
+      message:  qform.querySelector('[name="qmessage"]').value.trim(),
     };
 
 
@@ -426,15 +450,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const el = document.createElement('div');
       el.className = `gi gi--${id}`;
       el.innerHTML = `
-    <div class="gi__thumb">
-      <img src="${item.emo}" alt="${item.name}" class="gi__img" />
-    </div>
-    <div class="gi__body">
-      <div class="gi__n">${String(i + 1).padStart(2, '0')}</div>
-      <div class="gi__name">${item.name}</div>
-      <div class="gi__meta">${item.meta}</div>
-      <span class="gi__tag">${item.tag}</span>
-    </div>`;
+        <div class="gi__thumb">
+          <img src="${item.emo}" alt="${item.name}" class="gi__img" />
+        </div>
+        <div class="gi__body">
+          <div class="gi__n">${String(i + 1).padStart(2, '0')}</div>
+          <div class="gi__name">${item.name}</div>
+          <div class="gi__meta">${item.meta}</div>
+          <span class="gi__tag">${item.tag}</span>
+        </div>`;
       mGal.appendChild(el);
     });
 
@@ -530,6 +554,28 @@ document.addEventListener('DOMContentLoaded', () => {
       el.style.transform = 'translateY(0)';
     }));
   });
+
+
+  /* ─────────────────────────────────────────────
+     SHARED: File → Base64 converter
+     Strips the data URI prefix so Resend gets
+     raw base64 content only
+  ───────────────────────────────────────────── */
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64 = reader.result.split(',')[1];
+        resolve({
+          filename: file.name,
+          content:  base64,
+          type:     file.type || 'application/octet-stream',
+        });
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
 
 
   /* ─────────────────────────────────────────────
